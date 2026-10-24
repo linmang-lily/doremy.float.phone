@@ -4642,7 +4642,7 @@ html,body{margin:0;padding:0;width:100%;height:100%;background:#121110;color:rgb
                       : "phone-workspace"
                 }
                 style={{
-                  touchAction: activeApp ? undefined : editMode ? "none" : "pan-y",
+                  touchAction: activeApp ? undefined : editMode ? "none" : "pan-x pan-y",
                   ...(!desktopReady && !activeApp ? { visibility: "hidden" } : {}),
                 }}
                 onPointerDown={handleSwipeStart}

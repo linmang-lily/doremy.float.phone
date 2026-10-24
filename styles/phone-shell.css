@@ -1458,3 +1458,83 @@
 .folder-dots .dot.active {
   background: color-mix(in srgb, var(--c-home-label, #ffffff) 85%, transparent);
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   方案 B：移动端全屏舒展适配（紧凑纵向留白，消除细长空旷感，释放水平切页手势）
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media screen and (max-width: 768px), screen and (max-device-width: 768px) {
+  :root {
+    /* 收紧桌面纵向留白，让长屏手机（20:9）的桌面紧凑饱满，不再上下过度拉伸 */
+    --home-grid-top-offset: 44px;
+    --home-grid-bottom-trim: 24px;
+    --home-row-gap-y: 6px;
+  }
+
+  .phone-shell-wrap {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* 消除金属物理外框在小屏上的多余挤压，让有效显示面积最大化 */
+  .phone-case {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .phone-case::before,
+  .phone-case::after,
+  .phone-frame::before,
+  .phone-frame::after {
+    display: none !important;
+  }
+
+  .phone-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* 铺满视口但保持内部桌面舒展 */
+  .phone-shell {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .phone-workspace {
+    width: 100% !important;
+    height: 100% !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    min-width: 0 !important;
+    touch-action: pan-x pan-y !important;
+  }
+}
+
+
+  background: color-mix(in srgb, var(--c-home-label, #ffffff) 85%, transparent);
+}

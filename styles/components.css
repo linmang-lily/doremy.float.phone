@@ -6014,6 +6014,16 @@
   background: rgba(100,170,255,0.12);
   color: rgba(100,170,255,0.9);
 }
+/* ── 设置卡片与全局身份头像尺寸保护 ── */
+.ui-config-card img,
+.user-identity-card img {
+  max-width: 44px !important;
+  max-height: 44px !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
 .pv-msg-badges {
   display: flex;
   flex-wrap: wrap;

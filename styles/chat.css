@@ -7277,3 +7277,53 @@
   background: currentColor;
   animation: chat-stream-cursor-blink 1s steps(2, start) infinite;
 }
+
+/* ── 通讯录与列表项头像尺寸防护（修复头像超大撑爆屏幕 Bug） ── */
+.minimal-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: var(--ui-radius, 12px);
+  min-height: 56px;
+  max-width: 100%;
+}
+
+.minimal-avatar-wrapper {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--c-input, #f2f3f5);
+}
+
+.minimal-avatar-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+}
+
+.minimal-online-dot {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-success, #34c759);
+  border: 2px solid #fff;
+}
