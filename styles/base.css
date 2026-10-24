@@ -68,6 +68,54 @@ a {
   width: var(--phone-total-width);
 }
 
+/* 移动端全屏开机动画：消除竖屏只占八分之一、底部留白和按不到进入按钮的 Bug */
+@media screen and (max-width: 768px), screen and (max-device-width: 768px) {
+  .app-root.splash-root {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #F1F2F6 !important;
+  }
+
+  .splash-shell-wrap {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .splash-shell-wrap .phone-case,
+  .splash-shell-wrap .phone-frame {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .splash-phone-screen {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .splash-enter-button {
+    bottom: max(36px, env(safe-area-inset-bottom, 24px)) !important;
+  }
+}
+
 .splash-phone-screen {
   padding: 0;
   background: #F1F2F6;
