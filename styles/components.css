@@ -1226,6 +1226,12 @@
   background: var(--c-page-body-bg);
   color: var(--c-text-title);
 }
+.page-body {
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+  overscroll-behavior-y: contain !important;
+}
+
 .mem-detail .page-body { padding-bottom: 0; }
 
 .memory-detail-scroll {
