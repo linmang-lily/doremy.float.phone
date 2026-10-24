@@ -294,8 +294,8 @@ export function ChatMessageList({ onCloseApp, activeSession, onSelectSession, on
                                 && (!keyword || (mascotSettings.nickname || "AI助手").toLowerCase().includes(keyword));
                             const regularItems = [...sessions]
                             .filter(s => {
-                                if (!(s.isGroup || contactIds.has(s.contactId))) return false;
-                                if (!hasSessionListContent(s.id)) return false;
+                                const charExists = allChars.some(c => c.id === s.contactId);
+                                if (!(s.isGroup || contactIds.has(s.contactId) || charExists)) return false;
                                 if (listTab === "private" && s.isGroup) return false;
                                 if (listTab === "group" && !s.isGroup) return false;
                                 if (!keyword) return true;

@@ -7278,6 +7278,34 @@
   animation: chat-stream-cursor-blink 1s steps(2, start) infinite;
 }
 
+/* ── 聊天室视口贴合与输入栏浮起保底（确保输入框清晰可见，不沉出屏幕） ── */
+.chat-room-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  z-index: 30 !important;
+}
+
+.chat-app .chat-room-wrapper {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.chat-input-bar {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 40 !important;
+  box-sizing: border-box !important;
+}
+
 /* ── 通讯录与列表项头像尺寸防护（修复头像超大撑爆屏幕 Bug） ── */
 .minimal-list-item {
   display: flex;
